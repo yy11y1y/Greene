@@ -22,11 +22,11 @@
             var currentSymptomId = symptom.SymptomId;
             <tr>
                 <td>@symptom.SymptomName</td>
-                <td><input type="radio" name="@($"severity_{symptom.SymptomId}")" value="0" checked="@((int)symptom.Severity == 0)" @onchange="@(e => { symptom.Severity = 0; StateHasChanged(); })" /></td>
-                <td><input type="radio" name="@($"severity_{symptom.SymptomId}")" value="1" checked="@((int)symptom.Severity == 1)" @onchange="@(e => { symptom.Severity = 1; StateHasChanged(); })" /></td>
-                <td><input type="radio" name="@($"severity_{symptom.SymptomId}")" value="2" checked="@((int)symptom.Severity == 2)" @onchange="@(e => { symptom.Severity = 2; StateHasChanged(); })" /></td>
-                <td><input type="radio" name="@($"severity_{symptom.SymptomId}")" value="3" checked="@((int)symptom.Severity == 3)" @onchange="@(e => { symptom.Severity = 3; StateHasChanged(); })" /></td>
-
+                <td><input type="radio" name="@($"severity_{symptom.SymptomId}")" value="0"  @onchange="@(e => { symptom.Severity = 0; StateHasChanged(); })" /></td>
+                <td><input type="radio" name="@($"severity_{symptom.SymptomId}")" value="1"  @onchange="@(e => { symptom.Severity = 1; StateHasChanged(); })" /></td>
+                <td><input type="radio" name="@($"severity_{symptom.SymptomId}")" value="2"  @onchange="@(e => { symptom.Severity = 2; StateHasChanged(); })" /></td>
+                <td><input type="radio" name="@($"severity_{symptom.SymptomId}")" value="3"  @onchange="@(e => { symptom.Severity = 3; StateHasChanged(); })" /></td>
+                
 
 
                 <td><strong>@GetSymptomScore(currentSymptomId)</strong></td>
@@ -63,28 +63,28 @@
 
 @code {
     List<SymptomModel> symptoms = new List<SymptomModel>
-{
-        new SymptomModel { SymptomId = 1, SymptomName = "1、心跳變快或變明顯(怦怦跳)", Severity = 0 },
-        new SymptomModel { SymptomId = 2, SymptomName = "2、覺得緊繃或緊張(神經質)", Severity = 0 },
-        new SymptomModel { SymptomId = 3, SymptomName = "3、睡眠障礙", Severity = 0 },
-        new SymptomModel { SymptomId = 4, SymptomName = "4、靜不下心、急躁", Severity = 0 },
-        new SymptomModel { SymptomId = 5, SymptomName = "5、一陣恐慌、不安", Severity = 0 },
-        new SymptomModel { SymptomId = 6, SymptomName = "6、注意力難以集中", Severity = 0 },
-        new SymptomModel { SymptomId = 7, SymptomName = "7、覺得疲倦或缺乏元氣", Severity = 0 },
-        new SymptomModel { SymptomId = 8, SymptomName = "8、對大多數事物失去興趣", Severity = 0 },
-        new SymptomModel { SymptomId = 9, SymptomName = "9、覺得不快樂或憂鬱", Severity = 0 },
-        new SymptomModel { SymptomId = 10, SymptomName = "10、容易掉淚或哭泣", Severity = 0 },
-        new SymptomModel { SymptomId = 11, SymptomName = "11、易怒、容易生氣", Severity = 0 },
-        new SymptomModel { SymptomId = 12, SymptomName = "12、覺得頭暈或是有快昏倒的感覺", Severity = 0 },
-        new SymptomModel { SymptomId = 13, SymptomName = "13、頭部或身體覺得緊繃或有壓力", Severity = 0 },
-        new SymptomModel { SymptomId = 14, SymptomName = "14、身體有些地方感覺麻麻的或有刺痛感", Severity = 0 },
-        new SymptomModel { SymptomId = 15, SymptomName = "15、頭痛", Severity = 0 },
-        new SymptomModel { SymptomId = 16, SymptomName = "16、肌肉關節痠痛", Severity = 0 },
-        new SymptomModel { SymptomId = 17, SymptomName = "17、手或腳感覺變得遲鈍或較沒感覺", Severity = 0 },
-        new SymptomModel { SymptomId = 18, SymptomName = "18、呼吸困難", Severity = 0 },
-        new SymptomModel { SymptomId = 19, SymptomName = "19、熱潮紅(一陣熱一陣冷、臉紅或冒汗)", Severity = 0 },
-        new SymptomModel { SymptomId = 20, SymptomName = "20、夜間流汗", Severity = 0 },
-        new SymptomModel { SymptomId = 21, SymptomName = "21、對性失去興趣", Severity = 0 }
+    {
+        new SymptomModel { SymptomId = 1, SymptomName = "01、心跳變快或變明顯(怦怦跳)"},
+        new SymptomModel { SymptomId = 2, SymptomName = "02、覺得緊繃或緊張(神經質)"},
+        new SymptomModel { SymptomId = 3, SymptomName = "03、睡眠障礙"},
+        new SymptomModel { SymptomId = 4, SymptomName = "04、靜不下心、急躁" },
+        new SymptomModel { SymptomId = 5, SymptomName = "05、一陣恐慌、不安" },
+        new SymptomModel { SymptomId = 6, SymptomName = "06、注意力難以集中"},
+        new SymptomModel { SymptomId = 7, SymptomName = "07、覺得疲倦或缺乏元氣"},
+        new SymptomModel { SymptomId = 8, SymptomName = "08、對大多數事物失去興趣"},
+        new SymptomModel { SymptomId = 9, SymptomName = "09、覺得不快樂或憂鬱"},
+        new SymptomModel { SymptomId = 10, SymptomName = "10、容易掉淚或哭泣"},
+        new SymptomModel { SymptomId = 11, SymptomName = "11、易怒、容易生氣"},
+        new SymptomModel { SymptomId = 12, SymptomName = "12、覺得頭暈或是有快昏倒的感覺"},
+        new SymptomModel { SymptomId = 13, SymptomName = "13、頭部或身體覺得緊繃或有壓力"},
+        new SymptomModel { SymptomId = 14, SymptomName = "14、身體有些地方感覺麻麻的或有刺痛感"},
+        new SymptomModel { SymptomId = 15, SymptomName = "15、頭痛"},
+        new SymptomModel { SymptomId = 16, SymptomName = "16、肌肉關節痠痛"},
+        new SymptomModel { SymptomId = 17, SymptomName = "17、手或腳感覺變得遲鈍或較沒感覺" },
+        new SymptomModel { SymptomId = 18, SymptomName = "18、呼吸困難" },
+        new SymptomModel { SymptomId = 19, SymptomName = "19、熱潮紅(一陣熱一陣冷、臉紅或冒汗)"},
+        new SymptomModel { SymptomId = 20, SymptomName = "20、夜間流汗"},
+        new SymptomModel { SymptomId = 21, SymptomName = "21、對性失去興趣" }
 
     };
 
